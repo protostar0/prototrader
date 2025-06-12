@@ -1,9 +1,30 @@
 main:
-  - title: "Posts"
+  - title: "Home"
+    url: /
+
+  - title: "Learn Trading"
+    children:
+      - title: "Level 1: Basics"
+        url: /categories/#level-1-basics
+      - title: "Level 2: Chart Reading"
+        url: /categories/#level-2-chart-reading
+      - title: "Level 3: Technical Tools"
+        url: /categories/#level-3-technical-tools
+      - title: "Level 4: Psychology & Risk"
+        url: /categories/#level-4-psychology-risk
+      - title: "Level 5: Strategy Practice"
+        url: /categories/#level-5-strategy-practice
+      - title: "Level 6: Advanced Topics"
+        url: /categories/#level-6-advanced-topics
+
+  - title: "All Posts"
     url: /posts/
+
   - title: "Categories"
     url: /categories/
+
   - title: "Tags"
     url: /tags/
+
   - title: "About"
     url: /about/
