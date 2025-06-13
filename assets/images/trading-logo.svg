@@ -1,0 +1,19 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="#2c3e50" stroke="#34495e" stroke-width="2"/>
+  
+  <!-- Chart lines -->
+  <polyline points="30,150 50,140 70,130 90,120 110,110 130,100 150,90 170,80" 
+            fill="none" stroke="#27ae60" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Candlestick -->
+  <rect x="85" y="95" width="10" height="20" fill="#27ae60"/>
+  <line x1="90" y1="85" x2="90" y2="95" stroke="#27ae60" stroke-width="2"/>
+  <line x1="90" y1="115" x2="90" y2="125" stroke="#27ae60" stroke-width="2"/>
+  
+  <!-- Trend arrow -->
+  <polygon points="160,60 170,70 160,80" fill="#e74c3c"/>
+  
+  <!-- T for Trading -->
+  <text x="100" y="180" text-anchor="middle" fill="#ecf0f1" font-family="Arial, sans-serif" font-size="24" font-weight="bold">T</text>
+</svg> 

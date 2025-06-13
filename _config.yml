@@ -23,6 +23,9 @@ github_username: yourusername
 minimal_mistakes_skin: "dark" # A dark theme works well for trading content
 search: true
 
+# Favicon
+favicon: /assets/images/favicon.svg
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
@@ -58,7 +61,7 @@ plugins:
 
 author:
   name   : "Trading Academy"
-  avatar : "/assets/images/trading-logo.jpg"
+  avatar : "/assets/images/trading-logo.svg"
   bio    : "Helping you become a better trader through education and practical insights."
   links:
     - label: "Twitter"
