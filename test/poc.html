@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apple Auth Redirect</title>
+  <script>
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        state: params.get('state'),
+        code: params.get('code')
+      };
+    }
+
+    function startRedirect() {
+      const { state, code } = getQueryParams();
+
+      if (!state || !code) {
+        alert("Missing 'state' or 'code' parameters in the URL.");
+        return;
+      }
+
+      const firstUrl = `https://idmsa.apple.com/appleauth/auth/authorize/validate?frame_id=${state}&iframeId=${state}&client_id=${state}3&redirect_uri=https://account.apple.com&response_type=code&response_mode=web_message&state=${state}&code=${code}&oauthRequireGrantCode=false&authVersion=latest`;
+      const secondUrl = "https://appleid.apple.com/account/manage/gs/ws/token";
+
+      // Open first window immediately
+      window.open(firstUrl, "_blank");
+
+      // Open second window after 5 seconds
+      setTimeout(() => {
+        window.open(secondUrl, "_blank");
+      }, 5000);
+    }
+  </script>
+</head>
+<body>
+  <h1>Apple Authorization</h1>
+  <p>Click the button below to start the authentication process.</p>
+  <button onclick="startRedirect()">Start Authorization</button>
+</body>
+</html>

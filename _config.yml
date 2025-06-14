@@ -13,18 +13,33 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "Trading Academy"
-email:
+title: "ProtoTraders"
+email: contact@prototraders.com
 description: >- # this means to ignore newlines until "baseurl:"
   Your comprehensive guide to trading forex and crypto markets. From basic concepts 
   to advanced strategies, learn trading step by step with practical examples and clear explanations.
-twitter_username: yourusername
-github_username: yourusername
+  Join ProtoTraders community for expert insights and proven trading strategies.
+url: "https://prototraders.com" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: prototraders
+github_username: prototraders
 minimal_mistakes_skin: "dark" # A dark theme works well for trading content
 search: true
 
+# SEO and Social Media
+seo:
+  type: "WebSite"
+  name: "ProtoTraders"
+  description: "Your comprehensive guide to trading forex and crypto markets"
+  url: "https://prototraders.com"
+  image: "/assets/images/image.png"
+
 # Favicon
 favicon: /assets/images/favicon.svg
+
+# Custom CSS
+custom_css:
+  - /assets/css/custom.css
 
 # Build settings
 markdown: kramdown
@@ -33,7 +48,7 @@ remote_theme: mmistakes/minimal-mistakes
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
@@ -58,33 +73,40 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-seo-tag
 
 author:
-  name   : "Trading Academy"
-  avatar : "/assets/images/trading-logo.svg"
-  bio    : "Helping you become a better trader through education and practical insights."
+  name   : "ProtoTraders"
+  avatar : "/assets/images/image.png"
+  bio    : "Your trusted source for comprehensive trading education. From forex to crypto, learn proven strategies and master the markets with ProtoTraders."
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/prototraders"
     - label: "TradingView"
       icon: "fas fa-fw fa-chart-line"
       url: "https://tradingview.com/"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://youtube.com/@prototraders"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/prototraders"
 
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/prototraders"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://youtube.com/@prototraders"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/prototraders"
+    - label: "Contact"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:contact@prototraders.com"
 
 defaults:
   # _posts
@@ -98,6 +120,8 @@ defaults:
       comments: true
       share: true
       related: true
+      sidebar:
+        nav: "posts"
   # _pages
   - scope:
       path: "_pages"
@@ -105,6 +129,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: "pages"
 
 category_archive:
   type: liquid
@@ -112,3 +138,33 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:title/
+
+# AdSense Configuration (for future use)
+adsense:
+  client: "ca-pub-XXXXXXXXXXXXXXXX" # Replace with your AdSense client ID
+  slot: "XXXXXXXXXX" # Replace with your ad slot ID
+
+# Analytics (for future use)
+analytics:
+  provider: google
+  google:
+    tracking_id: "G-XXXXXXXXXX" # Replace with your Google Analytics ID
+
+# Navigation for legal/standard pages
+navigation:
+  - title: "About"
+    url: "/about/"
+  - title: "Contact"
+    url: "/contact/"
+  - title: "Privacy Policy"
+    url: "/privacy-policy/"
+  - title: "Terms & Conditions"
+    url: "/terms-and-conditions/"
+  - title: "Disclaimer"
+    url: "/disclaimer/"
